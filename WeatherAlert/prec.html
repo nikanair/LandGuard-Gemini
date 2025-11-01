@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precautionary Measures</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        h5 {
+            font-size: 60px;
+            margin-left: 40px;
+            font-family: "Oswald", sans-serif;
+            color: #072b5b;
+        }
+    </style>
+</head>
+<body>
+    <h5>Precautionary Measures</h5>
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+            <h1 class="text-2xl font-bold mb-6 text-center">Precautionary Measures for Your Location</h1>
+            <div id="precautions" class="text-gray-700"></div>
+        </div>
+    </div>
+    <script>
+        // Extract location from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const location = urlParams.get('location');
+
+        // Fetch precautionary measures
+        async function fetchPrecautions() {
+            try {
+                const response = await fetch(`/precautions?location=${encodeURIComponent(location)}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                document.getElementById('precautions').innerText = data.precautions;
+            } catch (error) {
+                console.error('Error fetching precautions:', error);
+                document.getElementById('precautions').innerText = 'Failed to load precautionary measures.';
+            }
+        }
+
+        fetchPrecautions();
+    </script>
+</body>
+</html>
