@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with Leaflet</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet"></head>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal" style="background-color: white;">
+    <header>
+        <nav class="navbar">
+            <div class="logo">LandGuard</div>
+            <ul class="nav-links">
+                <li><a href="http://localhost:3000/index.html">Home</a></li>
+                <li><a href="http://localhost:3001/risk_analyser.html">Localizer</a></li>
+                <li><a href="http://localhost:3002/alert_checker.html">W-Alert</a></li>
+                <!--<li><a href="http://localhost:3003/image_describer.html">Image-D</a></li>
+                <li><a href="http://localhost:3004/index.html">Community</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    <h5>Localizer</h5>
+    <div class="c-hUpsPh-icTKoBa-css" style="text-align: left;">
+            <div  class="c-hUpsPh-ifCsQfY-css">
+                <div class="c-hUpsPh-ihgcmEP-css">
+                        <i class="fa fa-heart" style="padding-top: 8px; padding-right: 3px;font-size: 22px;color: #8bd8c6"></i>
+                      <b style="color: #52734D;font-size: 17px">Real-Time Risk Assessment</b> <p style="padding-left: 30px;color: #414839;">Assesses the risk of landslides in a specific area, offering personalized and location-specific risk evaluations.</p>
+                </div>
+                <br>
+            </div>
+            <div class="c-hUpsPh-ifCsQfY-css">
+                <div class="c-hUpsPh-ihgcmEP-css">
+                      <i class="fa fa-heart" style="padding-top: 8px; padding-right: 3px;font-size: 22px;color: #d88b8b"></i>
+                      <b style="color: #52734D;font-size: 17px">Geography Image Analysis</b> <p style="padding-left: 30px;color: #414839;">Users can upload images of the local geography, such as hillsides or terrain, which the Localizer analyzes using AI to identify potential landslide risks.</p>
+                </div>
+            </div>
+            <div class="c-hUpsPh-ifCsQfY-css">
+                <div class="c-hUpsPh-ihgcmEP-css">
+                      <i class="fa fa-heart" style="padding-top: 8px; padding-right: 3px;font-size: 22px;color: #6FCD8D"></i>
+                      <b style="color: #52734D;font-size: 17px">Alerts and Precautions</b> <p style="padding-left: 30px;color: #414839;">Based on the combined data from geographical images and precise location coordinates, the Localizer issues alerts and provides safety recommendations tailored to the specific terrain and weather conditions of the user’s location.
+</p>
+                </div>
+            </div>
+        </div>
+    <div class="container">
+        <div id="map" class="my-4"></div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4" style="color: white;">
+                Upload and Analyze Image
+            </h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                
+                <div class="mb-4">
+                    <label for="image" class="block text-sm font-medium text-gray-700" style="color: black;">Select Image</label>
+                    <label class="custom-file-input">
+                      <input type="file" id="image" name="image" accept="image/*" required>
+                    </label>
+                </div>
+                <button type="submit" style="
+                    color: white;
+                    background-color: #414839;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 25px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease;
+                "
+                onmouseover="this.style.backgroundColor='#6FCD8D'; this.style.transform='scale(1.05)';"
+                onmouseout="this.style.backgroundColor='#414839'; this.style.transform='scale(1)';">
+                    Upload and Analyze
+                </button>
+
+
+            </form>
+    
+        </div>
+    </div>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([12.825395, 77.686374], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const marker = L.marker([12.825395, 77.686374], { draggable: true }).addTo(map);
+
+        marker.on('dragend', function (event) {
+            const lat = event.target.getLatLng().lat.toFixed(6);
+            const lng = event.target.getLatLng().lng.toFixed(6);
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lng;
+        });
+
+        // Handle form submission
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const data = await response.json();
+                console.log('Response data:', data); // Log the response data
+
+                if (data.description) {
+                    // Redirect to a new page with description as URL parameter
+                    window.location.href = `/description.html?desc=${encodeURIComponent(data.description)}`;
+                } else {
+                    alert('Failed to generate description.');
+                }
+            } catch (error) {
+                console.error('Error fetching description:', error);
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+

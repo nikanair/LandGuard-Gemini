@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oswald:wght@200..700&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+
+    <style>
+/* styles.css */
+.c-hUpsPh-icTKoBa-css {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #fffcd9;
+}
+.c-hUpsPh-icTKoBa-css {
+    flex-direction: row;
+}
+.c-hUpsPh-ifCsQfY-css {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 8px;
+}
+.c-hUpsPh-ihgcmEP-css {
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 0px;
+    text-align:  left;
+    
+}
+.c-hUpsPh-ifCsQfY-css {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: transparent;
+  }
+
+  .custom-file-input::before {
+    content: 'Choose File';
+    display: inline-block;
+    background-color: white;
+    color: #414839;
+    padding: 5px 20px;
+    border: 2px solid #414839;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+
+  .custom-file-input input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+.container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Single column layout */
+        gap: 20px;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start;
+    }
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    border-width: 10px;
+    border-color: #deb889;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #deb889;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+h5
+{
+    font-size: 60px;
+    margin-left: 40px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #414839;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #fffcd9;
+}
+
+header {
+    background-color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #414839;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #414839;
+    font-weight: 500;
+}
+
+.hero {
+    background-image: url("http://localhost:3004/uploads/bg.png");
+    background-position: center;
+    background-size:110%; /* Adjust this percentage to zoom out more or less */
+    color: #414839;
+    text-align: left;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: #deb889;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #dddbba;
+}
+
+.features-section, .about-section, .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+    color: #414839;
+}
+
+.features-section h2, .about-section h2, .contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #deb889;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #414839;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #414839;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #414839;
+            font-weight: 500;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #414839;
+            margin-bottom: 20px;
+        }
+        .description-text {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #072b5b;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0a3d7c;
+        }
+        h5
+            {
+                font-size: 60px;
+                margin-left: 40px;
+                font-family: "Lexend", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: <weight>;
+                font-style: normal;
+                margin-bottom: 20px;
+                color: #414839;
+            }
+
+        .download-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .description-text {
+            font-size: 16px;
+            color: #414839;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Preserve whitespace formatting */
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #414839;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0a3d7c;
+        }
+        .social-buttons {
+            margin-top: 20px;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+        }
+        .social-buttons a:hover {
+            color: #072b5b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">LandGuard</div>
+            <ul class="nav-links">
+                <li><a href="http://localhost:3000/index.html">Home</a></li>
+                <li><a href="http://localhost:3001/risk_analyser.html">Localizer</a></li>
+                <li><a href="http://localhost:3002/alert_checker.html">W-Alert</a></li>
+                <!--<li><a href="http://localhost:3003/image_describer.html">Image-D</a></li>
+                <li><a href="http://localhost:3004/index.html">Community</a></li>-->
+            </ul>
+        </nav>
+    </header>
+<h5>Analyzed Result</h5>
+    <div class="container">
+        <div class="header">Description</div>
+        <div class="description-text" id="descriptionContainer">
+            <!-- Description will be displayed here -->
+        </div>
+        <div class="social-buttons">
+            <a href="#" id="shareFacebook" target="_blank" class="fa fa-facebook"></a>
+            <a href="#" id="shareTwitter" target="_blank" class="fa fa-twitter"></a>
+            <a href="#" id="shareLinkedIn" target="_blank" class="fa fa-linkedin"></a>
+        </div>
+        <div class="download-buttons">
+            <button class="button" id="downloadPDF">Download as PDF</button>
+            <button class="button" id="downloadWord">Download as Word</button>
+        </div>
+        <a href="http://localhost:3001/risk_analyser.html" class="button">Go Back</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/file-saver.js/2.0.5/FileSaver.min.js"></script>
+
+    <script>
+        // Extract description from URL parameters and display it
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const description = getQueryParameter('desc');
+        if (description) {
+            // Remove asterisks from the description
+            const cleanedDescription = decodeURIComponent(description).replace(/\*/g, '');
+            document.getElementById('descriptionContainer').textContent = cleanedDescription;
+        } else {
+            document.getElementById('descriptionContainer').textContent = 'No description available.';
+        }
+
+        document.getElementById('downloadPDF').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text(document.getElementById('descriptionContainer').textContent, 10, 10);
+            doc.save('description.pdf');
+        });
+
+        document.getElementById('downloadWord').addEventListener('click', () => {
+            const text = document.getElementById('descriptionContainer').textContent;
+            const blob = new Blob([text], { type: 'application/msword' });
+            saveAs(blob, 'description.doc');
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</body>
+</html>
