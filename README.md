@@ -2,7 +2,7 @@
 
 [![Made with Python](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)  
 [![Flask](https://img.shields.io/badge/flask-📦-lightgrey.svg)](https://flask.palletsprojects.com/)  
-[![YouTube Demo](https://img.shields.io/badge/demo‐video‐red.svg)](https://youtu.be/R8b-GFcKoX)  
+[![YouTube Demo](https://img.shields.io/badge/demo‐video‐red.svg)](https://youtu.be/R8b-GFcKoXQ)  
 
 LandGuard Gemini uses AI to provide **real-time alerts**, **landslide-risk predictions**, and **location-based weather updates**, helping communities stay safe during natural disasters.  
 Built with Python, Flask, and the Gemini model/API.
